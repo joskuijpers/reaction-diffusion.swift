@@ -12,6 +12,12 @@
 		80CBF99E2220A8180016BA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80CBF99D2220A8180016BA8C /* Assets.xcassets */; };
 		80CBF9A12220A8180016BA8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CBF99F2220A8180016BA8C /* Main.storyboard */; };
 		80CBF9AD2220A8190016BA8C /* ReactionDiffusionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBF9AC2220A8190016BA8C /* ReactionDiffusionTests.swift */; };
+		80CBF9BF2220AC3C0016BA8C /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBF9BE2220AC3C0016BA8C /* Renderer.swift */; };
+		80CBF9C32220AD950016BA8C /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CBF9C12220AD950016BA8C /* Metal.framework */; };
+		80CBF9C42220AD950016BA8C /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CBF9C22220AD950016BA8C /* MetalKit.framework */; };
+		80CBF9C62220AF8D0016BA8C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBF9C52220AF8D0016BA8C /* Image.swift */; };
+		80CBF9CA2220B0030016BA8C /* Image.tga in Resources */ = {isa = PBXBuildFile; fileRef = 80CBF9C92220B0030016BA8C /* Image.tga */; };
+		80CBF9CE2220CA6A0016BA8C /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 80CBF9CD2220CA6A0016BA8C /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,12 @@
 		80CBF9A82220A8190016BA8C /* ReactionDiffusionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactionDiffusionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CBF9AC2220A8190016BA8C /* ReactionDiffusionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionDiffusionTests.swift; sourceTree = "<group>"; };
 		80CBF9AE2220A8190016BA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80CBF9BE2220AC3C0016BA8C /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		80CBF9C12220AD950016BA8C /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		80CBF9C22220AD950016BA8C /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		80CBF9C52220AF8D0016BA8C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		80CBF9C92220B0030016BA8C /* Image.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Image.tga; sourceTree = "<group>"; };
+		80CBF9CD2220CA6A0016BA8C /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CBF9C32220AD950016BA8C /* Metal.framework in Frameworks */,
+				80CBF9C42220AD950016BA8C /* MetalKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +75,7 @@
 				80CBF9982220A8160016BA8C /* ReactionDiffusion */,
 				80CBF9AB2220A8190016BA8C /* ReactionDiffusionTests */,
 				80CBF9972220A8160016BA8C /* Products */,
+				80CBF9C02220AD950016BA8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,12 +91,13 @@
 		80CBF9982220A8160016BA8C /* ReactionDiffusion */ = {
 			isa = PBXGroup;
 			children = (
+				80CBF9CC2220CA5E0016BA8C /* Shaders */,
+				80CBF9C92220B0030016BA8C /* Image.tga */,
+				80CBF9BD2220AA9E0016BA8C /* Renderer */,
+				80CBF9B92220A9690016BA8C /* Viewer */,
 				80CBF9992220A8160016BA8C /* AppDelegate.swift */,
-				80CBF99B2220A8160016BA8C /* ViewController.swift */,
 				80CBF99D2220A8180016BA8C /* Assets.xcassets */,
-				80CBF99F2220A8180016BA8C /* Main.storyboard */,
-				80CBF9A22220A8190016BA8C /* Info.plist */,
-				80CBF9A32220A8190016BA8C /* ReactionDiffusion.entitlements */,
+				80CBF9BC2220A9B30016BA8C /* AppInfo */,
 			);
 			path = ReactionDiffusion;
 			sourceTree = "<group>";
@@ -93,6 +109,50 @@
 				80CBF9AE2220A8190016BA8C /* Info.plist */,
 			);
 			path = ReactionDiffusionTests;
+			sourceTree = "<group>";
+		};
+		80CBF9B92220A9690016BA8C /* Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				80CBF99B2220A8160016BA8C /* ViewController.swift */,
+				80CBF99F2220A8180016BA8C /* Main.storyboard */,
+			);
+			name = Viewer;
+			sourceTree = "<group>";
+		};
+		80CBF9BC2220A9B30016BA8C /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				80CBF9A22220A8190016BA8C /* Info.plist */,
+				80CBF9A32220A8190016BA8C /* ReactionDiffusion.entitlements */,
+			);
+			name = AppInfo;
+			sourceTree = "<group>";
+		};
+		80CBF9BD2220AA9E0016BA8C /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				80CBF9C52220AF8D0016BA8C /* Image.swift */,
+				80CBF9BE2220AC3C0016BA8C /* Renderer.swift */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		80CBF9C02220AD950016BA8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80CBF9C12220AD950016BA8C /* Metal.framework */,
+				80CBF9C22220AD950016BA8C /* MetalKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80CBF9CC2220CA5E0016BA8C /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				80CBF9CD2220CA6A0016BA8C /* Shaders.metal */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CBF9CA2220B0030016BA8C /* Image.tga in Resources */,
 				80CBF99E2220A8180016BA8C /* Assets.xcassets in Resources */,
 				80CBF9A12220A8180016BA8C /* Main.storyboard in Resources */,
 			);
@@ -196,7 +257,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CBF99C2220A8160016BA8C /* ViewController.swift in Sources */,
+				80CBF9C62220AF8D0016BA8C /* Image.swift in Sources */,
+				80CBF9BF2220AC3C0016BA8C /* Renderer.swift in Sources */,
 				80CBF99A2220A8160016BA8C /* AppDelegate.swift in Sources */,
+				80CBF9CE2220CA6A0016BA8C /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
